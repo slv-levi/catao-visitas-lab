@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIAGO LIMA | Laboratório Digital - Cartão Virtual</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brandDark: '#0b0f17',
+                        brandCardBg: '#111823',
+                        brandBlue: '#60a5fa',
+                        brandBlueLight: '#93c5fd',
+                        brandAccent: '#38bdf8'
+                    },
+                    boxShadow: {
+                        'glow-blue': '0 0 30px -5px rgba(56, 189, 248, 0.3)',
+                        'card-depth': '0 25px 60px -15px rgba(0, 0, 0, 0.85)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: #080c14;
+            background-image: radial-gradient(circle at 50% 15%, #152238 0%, #080c14 70%);
+            color: #f1f5f9;
+        }
+
+        /* Glassmorphism Outer Mobile Container */
+        .glass-card {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Interactive Action Buttons */
+        .glass-action-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-action-btn:hover {
+            border-color: rgba(96, 165, 250, 0.5);
+            background: rgba(96, 165, 250, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -5px rgba(56, 189, 248, 0.2);
+        }
+
+        .glass-action-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-3 sm:p-6 font-sans select-none">
+
+    <!-- Container do Cartão Mobile -->
+    <main class="w-full max-w-[420px] mx-auto glass-card rounded-[2.5rem] p-6 sm:p-8 shadow-card-depth relative overflow-hidden my-auto border border-slate-800">
+
+        <!-- Luz de Fundo Decorativa -->
+        <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- ================= HEADER COM LOGO ORIGINAL ================= -->
+        <header class="flex flex-col items-center text-center relative z-10 pt-2 mb-6">
+            
+            <!-- Imagem do Logotipo Real em Alta Resolução -->
+            <div class="relative w-full max-w-[280px] mb-3 flex items-center justify-center rounded-2xl overflow-hidden p-2">
+                <img src="./src/img/image.png" 
+                     alt="THIAGO LIMA Laboratório Digital" 
+                     class="w-48 h-48 object-cover rounded-full drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d131a/70b9e8?text=THIAGO+LIMA+%5BLABORATORIO+DIGITAL%5D';" />
+            </div>
+
+            <!-- Resumo da Bio Estilizada -->
+            <div class="mt-1 px-4 py-3 rounded-2xl bg-slate-900/90 border border-slate-800 text-[12px] sm:text-[13px] text-slate-200 font-medium leading-relaxed max-w-sm shadow-inner text-center">
+                Esqueça o imprevisto na entrega do caso. 🦷<br>
+                Rigor técnico e inovação digital para<br>
+                estética natural e ajuste preciso.
+            </div>
+        </header>
+
+        <!-- ================= BOTÕES INTERATIVOS ================= -->
+        <section class="space-y-3 relative z-10 mb-6">
+            
+            <!-- WhatsApp Call to Action -->
+            <a href="https://wa.me/+558589154017?text=Ol%C3%A1%20Thiago!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20e%20enviar%20um%20caso." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="glass-action-btn flex items-center justify-between p-3.5 rounded-2xl group w-full text-left">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all shadow-md">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Atendimento WhatsApp</div>
+                        <div class="text-[11px] text-slate-400">Orçamentos & Casos Clínicos</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-emerald-400 transition-colors mr-1"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/thiagolimalaboratorio/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="glass-action-btn flex items-center justify-between p-3.5 rounded-2xl group w-full text-left">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-xl bg-pink-500/20 border border-pink-500/30 flex items-center justify-center text-pink-400 group-hover:bg-gradient-to-tr group-hover:from-amber-500 group-hover:via-pink-500 group-hover:to-purple-600 group-hover:text-white transition-all shadow-md">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-sm font-bold text-white group-hover:text-pink-300 transition-colors">Instagram Oficial</div>
+                        <div class="text-[11px] text-slate-400">@thiagolimalaboratorio</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-pink-400 transition-colors mr-1"></i>
+            </a>
+
+            <!-- Upload de Casos STL -->
+            <a href="https://www.instagram.com/thiagolimalaboratorio/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+                    class="glass-action-btn flex items-center justify-between p-3.5 rounded-2xl group w-full text-left">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-slate-950 transition-all shadow-md">
+                        <i class="fa-solid fa-tags text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">Tabela de Preços</div>
+                        <div class="text-[11px] text-slate-400">Confira nossa tabela de preços em PDF</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-pink-400 transition-colors mr-1"></i>
+            </a>
+
+        </section>
+
+        <!-- ================= RODAPÉ DE AÇÕES ================= -->
+        <footer class="pt-3 border-t border-slate-800 flex gap-3 relative z-10">
+
+            <button onclick="copyCardLink()" 
+                    class="flex-1 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-slate-950 font-extrabold py-3.5 px-4 rounded-xl shadow-glow-blue flex items-center justify-center space-x-2 text-xs uppercase tracking-wider transition-all transform active:scale-95">
+                <i class="fa-solid fa-share-nodes text-lg"></i>
+            </button>
+        </footer>
+
+        <div class="text-center mt-4 text-[10px] text-slate-500 font-medium tracking-wide">
+            Thiago Lima Laboratório Digital • Conectando laboratório e clínica
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-sky-400 text-slate-950 px-5 py-3 rounded-full font-bold text-xs shadow-glow-blue opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center space-x-2">
+        <i class="fa-solid fa-circle-check text-base"></i>
+        <span id="toastMsg">Mensagem enviada com sucesso!</span>
+    </div>
+
+    <script>
+
+        function showToast(mensagem) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            
+            // Define o texto dinâmico
+            toastMsg.innerText = mensagem;
+            
+            // Remove a transparência e a trava de cliques para mostrar o elemento
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            
+            // Executa após 3 segundos para esconder novamente
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+
+        // Copiar Link do Cartão Virtual
+        function copyCardLink() {
+            const tempInput = document.createElement('input');
+            document.body.appendChild(tempInput);
+            tempInput.value = window.location.href;
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast("Link do cartão copiado!");
+        }
+    </script>
+</body>
+</html>
